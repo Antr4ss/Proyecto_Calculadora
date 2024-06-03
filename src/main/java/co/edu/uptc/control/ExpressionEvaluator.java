@@ -11,7 +11,7 @@ public class ExpressionEvaluator {
         for (int i = 0; i < expression.length(); i++) {
             char c = expression.charAt(i);
 
-            if (Character.isDigit(c)) {
+            if (Character.isDigit(c) || c == '.') {
                 StringBuilder sbuf = new StringBuilder();
                 while (i < expression.length() && (Character.isDigit(expression.charAt(i)) || expression.charAt(i) == '.')) {
                     sbuf.append(expression.charAt(i++));
@@ -30,6 +30,8 @@ public class ExpressionEvaluator {
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
                 }
                 ops.push(c);
+            } else if (c == '√') {
+                ops.push(c);
             }
         }
 
@@ -45,7 +47,9 @@ public class ExpressionEvaluator {
             return false;
         if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
             return false;
-        return !(op1 == '^' && op2 == '^');
+        if ((op1 == '^' || op1 == '√') && (op2 != '^' && op2 != '√'))
+            return false;
+        return true;
     }
 
     private static double applyOp(char op, double b, double a) {
@@ -63,8 +67,11 @@ public class ExpressionEvaluator {
             case '^':
                 return Math.pow(a, b);
             case '√':
+                if (a < 0)
+                    throw new UnsupportedOperationException("Raíz cuadrada de número negativo");
                 return Math.sqrt(a);
         }
         return 0;
     }
+
 }

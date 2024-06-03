@@ -21,7 +21,7 @@
         <padding>
             <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
         </padding>
-        <TextField fx:id="expressionField" GridPane.columnSpan="4"/>
+        <TextField fx:id="expressionField" GridPane.columnSpan="5"/>
         <Button text="7" onAction="#handleNumber" GridPane.rowIndex="1"/>
         <Button text="8" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
         <Button text="9" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
@@ -38,5 +38,10 @@
         <Button text="." onAction="#handleNumber" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
         <Button text="=" onAction="#handleEquals" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
         <Button text="+" onAction="#handleOperator" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+        <Button text="^" onAction="#handleOperator" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Button text="√" onAction="#handleSqrt" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+        <Button text="C" onAction="#handleClear" GridPane.rowIndex="5" GridPane.columnIndex="3"/>
+
+
     </GridPane>
 </VBox>

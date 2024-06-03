@@ -53,6 +53,11 @@ public class CalculatorController {
     }
 
     @FXML
+    private void handleClear(javafx.event.ActionEvent event) {
+        expressionField.clear();
+    }
+
+    @FXML
     private void handleEquals(javafx.event.ActionEvent event) {
         String expression = expressionField.getText();
         if (!isValidExpression(expression)) {
@@ -64,6 +69,22 @@ public class CalculatorController {
             expressionField.setText(String.valueOf(result));
         } catch (Exception e) {
             showError("Error en la expresión aritmética");
+        }
+    }
+
+    @FXML
+    private void handleSqrt(javafx.event.ActionEvent event) {
+        String expression = expressionField.getText();
+        try {
+            double value = Double.parseDouble(expression);
+            if (value < 0) {
+                showError("No se puede calcular la raíz cuadrada de un número negativo");
+                return;
+            }
+            double result = Math.sqrt(value);
+            expressionField.setText(String.valueOf(result));
+        } catch (NumberFormatException e) {
+            showError("Entrada no válida para raíz cuadrada");
         }
     }
 
