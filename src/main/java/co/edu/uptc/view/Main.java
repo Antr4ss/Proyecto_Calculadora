@@ -31,6 +31,8 @@ public class Main extends Application {
         primaryStage.setTitle("Calculadora");
         setRoot("calculator");
         primaryStage.setResizable(false);
+        primaryStage.setWidth(360);  // Ancho de un teléfono móvil común
+        primaryStage.setHeight(640); // Altura de un teléfono móvil común
         primaryStage.show();
     }
 }
