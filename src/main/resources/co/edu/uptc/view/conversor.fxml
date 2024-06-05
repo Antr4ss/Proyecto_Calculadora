@@ -4,24 +4,32 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="530.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uptc.view.ConverseController">
+<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uptc.view.ConverseController">
 
     <HBox alignment="center" spacing="10">
         <VBox alignment="TOP_LEFT" />
         <VBox />
     </HBox>
-      <Button layoutX="44.0" layoutY="279.0" onAction="#handleBaseConversion" prefHeight="42.0" text="Convertir" />
-      <ComboBox fx:id="baseComboBox" layoutX="26.0" layoutY="127.0" prefHeight="42.0" prefWidth="100" />
-      <ComboBox fx:id="convertToBaseComboBox" layoutX="27.0" layoutY="225.0" prefHeight="42.0" prefWidth="100" />
-      <Label layoutX="38.0" layoutY="192.0" text="CONVERTIR A:" />
-      <Label layoutX="37.0" layoutY="101.0" text="BASE ACTUAL:" />
-      <TextField fx:id="expressionField" layoutX="174.0" layoutY="136.0" prefHeight="42.0" prefWidth="148.0" />
-      <TextField fx:id="resultField" editable="false" layoutX="172.0" layoutY="225.0" prefHeight="42.0" prefWidth="148.0" />
-      <Label layoutX="181.0" layoutY="111.0" prefHeight="32.0" prefWidth="56.0" text="VALOR:" />
-      <Label layoutX="181.0" layoutY="197.0" prefHeight="25.0" prefWidth="73.0" text="RESULTADO:" />
-      <Button fx:id="backToCalc" layoutX="10.0" layoutY="14.0" onAction="#backToCalc" prefHeight="42.0" prefWidth="120.0" text="Back to calculator" />
+      <Button layoutX="145.0" layoutY="333.0" onAction="#handleBaseConversion" prefHeight="42.0" text="Convertir" />
+      <ComboBox fx:id="baseComboBox" layoutX="27.0" layoutY="88.0" prefHeight="42.0" prefWidth="148.0" />
+      <ComboBox fx:id="convertToBaseComboBox" layoutX="28.0" layoutY="214.0" prefHeight="42.0" prefWidth="148.0" />
+      <Label layoutX="32.0" layoutY="197.0" text="CONVERTIR A:" />
+      <Label layoutX="32.0" layoutY="71.0" text="BASE ACTUAL:" />
+      <TextField fx:id="expressionField" layoutX="27.0" layoutY="155.0" prefHeight="42.0" prefWidth="305.0" />
+      <TextField fx:id="resultField" editable="false" layoutX="27.0" layoutY="281.0" prefHeight="42.0" prefWidth="305.0" />
+      <Label layoutX="32.0" layoutY="130.0" prefHeight="32.0" prefWidth="56.0" text="VALOR:" />
+      <Label layoutX="28.0" layoutY="256.0" prefHeight="25.0" prefWidth="120.0" text="VALOR CONVERTIDO:" />
+      <Button fx:id="backToCalc" layoutX="10.0" layoutY="14.0" onAction="#backToCalc" prefHeight="42.0" prefWidth="34.0">
+            <graphic>
+                <ImageView fitHeight="30" fitWidth="30">
+                <Image url="@images/logo1.png" />
+                </ImageView>
+            </graphic>
+      </Button>
 </AnchorPane>

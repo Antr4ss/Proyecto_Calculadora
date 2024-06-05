@@ -42,7 +42,6 @@
         <artifactId>javafx-fxml</artifactId>
         <version>22.0.1</version>
     </dependency>
-
     </dependencies>
 
 </project>
