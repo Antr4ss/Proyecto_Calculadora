@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,6 +30,8 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
         primaryStage.setTitle("Calculadora");
+        Image applicationIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/co/edu/uptc/view/images/Windows_Calculator_icon.png")));
+        primaryStage.getIcons().add(applicationIcon);
         setRoot("calculator");
         primaryStage.setResizable(false);
         primaryStage.show();

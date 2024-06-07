@@ -5,39 +5,39 @@ import java.util.Stack;
 public class ExpressionEvaluator {
 
     public static double evaluate(String expression) {
+        char[] tokens = expression.toCharArray();
+
         Stack<Double> values = new Stack<>();
         Stack<Character> ops = new Stack<>();
 
-        for (int i = 0; i < expression.length(); i++) {
-            char c = expression.charAt(i);
+        for (int i = 0; i < tokens.length; i++) {
+            if (tokens[i] == ' ')
+                continue;
 
-            if (Character.isDigit(c) || c == '.') {
-                StringBuilder sbuf = new StringBuilder();
-                while (i < expression.length() && (Character.isDigit(expression.charAt(i)) || expression.charAt(i) == '.')) {
-                    sbuf.append(expression.charAt(i++));
+            if ((tokens[i] >= '0' && tokens[i] <= '9') || (i == 0 && tokens[i] == '-')) {
+                StringBuffer buffer = new StringBuffer();
+                if (tokens[i] == '-') {
+                    buffer.append(tokens[i++]);
                 }
+                while (i < tokens.length && (tokens[i] >= '0' && tokens[i] <= '9' || tokens[i] == '.'))
+                    buffer.append(tokens[i++]);
+                values.push(Double.parseDouble(buffer.toString()));
                 i--;
-                values.push(Double.parseDouble(sbuf.toString()));
-            } else if (c == '(') {
-                ops.push(c);
-            } else if (c == ')') {
-                while (ops.peek() != '(') {
+            } else if (tokens[i] == '(') {
+                ops.push(tokens[i]);
+            } else if (tokens[i] == ')') {
+                while (ops.peek() != '(')
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
-                }
                 ops.pop();
-            } else if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^') {
-                while (!ops.isEmpty() && hasPrecedence(c, ops.peek())) {
+            } else if (tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/' || tokens[i] == '^') {
+                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek()))
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
-                }
-                ops.push(c);
-            } else if (c == '√') {
-                ops.push(c);
+                ops.push(tokens[i]);
             }
         }
 
-        while (!ops.isEmpty()) {
+        while (!ops.empty())
             values.push(applyOp(ops.pop(), values.pop(), values.pop()));
-        }
 
         return values.pop();
     }
@@ -45,33 +45,21 @@ public class ExpressionEvaluator {
     private static boolean hasPrecedence(char op1, char op2) {
         if (op2 == '(' || op2 == ')')
             return false;
-        if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
-            return false;
-        if ((op1 == '^' || op1 == '√') && (op2 != '^' && op2 != '√'))
-            return false;
-        return true;
+        return (op1 != '*' && op1 != '/' && op1 != '^') || (op2 != '+' && op2 != '-');
     }
 
     private static double applyOp(char op, double b, double a) {
-        switch (op) {
-            case '+':
-                return a + b;
-            case '-':
-                return a - b;
-            case '*':
-                return a * b;
-            case '/':
+        return switch (op) {
+            case '+' -> a + b;
+            case '-' -> a - b;
+            case '*' -> a * b;
+            case '/' -> {
                 if (b == 0)
-                    throw new UnsupportedOperationException("Cannot divide by zero");
-                return a / b;
-            case '^':
-                return Math.pow(a, b);
-            case '√':
-                if (a < 0)
-                    throw new UnsupportedOperationException("Raíz cuadrada de número negativo");
-                return Math.sqrt(a);
-        }
-        return 0;
+                    throw new UnsupportedOperationException("No se puede dividir por cero");
+                yield a / b;
+            }
+            case '^' -> Math.pow(a, b);
+            default -> 0;
+        };
     }
-
 }
