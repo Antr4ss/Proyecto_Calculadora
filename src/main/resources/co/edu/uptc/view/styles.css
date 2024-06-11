@@ -1,0 +1,125 @@
+/* styles.css */
+
+/* General background color for the root */
+.root {
+    -fx-background-color: #252628;
+}
+
+/* Style for the text fields */
+.expression-field {
+    -fx-font-size: 24px;
+    -fx-background-color: #1b1c1e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #444444;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-weight: bold;
+}
+
+.text-field{
+    -fx-background-color: #1b1c1e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #444444;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-weight: bold;
+}
+
+
+/* Style for buttons */
+.button {
+    -fx-font-size: 18px;
+    -fx-background-color: #533d28;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #444444;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+/* Pressed effect for buttons */
+.button:pressed {
+    -fx-background-color: #444444;
+}
+
+/* Style for the base change buttons */
+.base-button {
+    -fx-min-width: 45px; /* Cambia a tu valor deseado */
+    -fx-min-height: 45px; /* Cambia a tu valor deseado */
+    -fx-max-width: 45px; /* Cambia a tu valor deseado */
+    -fx-max-height: 45px; /* Cambia a tu valor deseado */
+    -fx-background-color: #f1af60;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 11px;
+}
+
+/* Hover effect for base buttons */
+.base-button:hover {
+    -fx-background-color: #555555;
+}
+
+/* Pressed effect for base buttons */
+.base-button:pressed {
+    -fx-background-color: #666666;
+}
+
+/* Style for operator buttons */
+.operator-button {
+    -fx-background-color: #f1af60;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+/* Hover effect for operator buttons */
+.operator-button:hover {
+    -fx-background-color: #555555;
+}
+
+/* Pressed effect for operator buttons */
+.operator-button:pressed {
+    -fx-background-color: #666666;
+}
+
+/* Style for the clear button */
+.clear-button {
+    -fx-background-color: #847d6a;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+/* Hover effect for clear button */
+.clear-button:hover {
+    -fx-background-color: #555555;
+}
+
+/* Pressed effect for clear button */
+.clear-button:pressed {
+    -fx-background-color: #666666;
+}
+
+
+/* Style for the equals button */
+.equals-button {
+    -fx-background-color: linear-gradient(to bottom, #f19b14, #fddb6c);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+/* Hover effect for equals button */
+.equals-button:hover {
+    -fx-background-color: #555555;
+}
+
+/* Pressed effect for equals button */
+.equals-button:pressed {
+    -fx-background-color: #666666;
+}

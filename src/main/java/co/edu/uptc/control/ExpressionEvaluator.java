@@ -2,7 +2,7 @@ package co.edu.uptc.control;
 
 import java.util.Stack;
 
-public class ExpressionEvaluator {
+public class ExpressionEvaluator extends CalculatorController {
 
     public static double evaluate(String expression) {
         char[] tokens = expression.toCharArray();

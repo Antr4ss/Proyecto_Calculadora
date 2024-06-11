@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BaseConverter {
+public class BaseConverter extends CalculatorController {
 
     private static final String DIGITS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

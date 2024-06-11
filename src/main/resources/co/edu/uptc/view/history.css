@@ -1,0 +1,32 @@
+/* history.css */
+
+/* Style for the ListView */
+/*.list-view {*/
+/*    -fx-background-color: #f0f0f0;*/
+/*    -fx-padding: 10px;*/
+/*}*/
+
+/*!* Style for the list cells *!*/
+/*.list-cell {*/
+/*    -fx-font-size: 14px;*/
+/*    -fx-font-weight: bold;*/
+/*}*/
+/* history.css */
+
+/* Style for the ListView */
+.list-view {
+    -fx-background-color: #252628;
+    -fx-padding: 10px;
+}
+
+/* Style for the list cells */
+.list-cell {
+    -fx-font-size: 14px;
+    -fx-background-color: #1b1c1e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #444444;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-weight: bold;
+}

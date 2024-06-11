@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: co.edu.uptc.view.Main
+Class-Path: javafx-fxml-22.0.1-win.jar javafx-graphics-22.0.1.jar javafx
+ -graphics-22.0.1-win.jar javafx-base-22.0.1.jar javafx-fxml-22.0.1.jar 
+ javafx-controls-22.0.1-win.jar javafx-controls-22.0.1.jar javafx-base-2
+ 2.0.1-win.jar gson-2.8.9.jar
+

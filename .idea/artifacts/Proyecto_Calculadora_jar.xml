@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact name="Proyecto_Calculadora:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Proyecto_Calculadora_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Proyecto_Calculadora.jar">
+        <element id="module-output" name="Proyecto_Calculadora" />
+      </element>
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:win:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:22.0.1" />
+      <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />
+    </root>
+  </artifact>
+</component>
