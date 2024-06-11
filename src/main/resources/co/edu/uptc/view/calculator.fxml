@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="590.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uptc.control.CalculatorController">
+<VBox prefHeight="590.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uptc.control.CalculatorController">
     <Button onAction="#showHistory">
         <graphic>
             <ImageView fx:id="historyImageView" fitHeight="18.0" fitWidth="19.0">
