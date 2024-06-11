@@ -36,28 +36,28 @@
             </padding>
        <TextField fx:id="expressionField" alignment="CENTER_RIGHT" prefHeight="218.0" prefWidth="340.0" styleClass="expression-field" />
         <HBox spacing="10" VBox.vgrow="NEVER">
-           <Button onAction="#handleBaseChange" styleClass="base-button" text="HEX" />
+           <Button fx:id="hexButton" onAction="#handleBaseChange" styleClass="base-button" text="HEX" />
             <TextField fx:id="hexField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" top="10.0" />
             </VBox.margin>
         </HBox>
         <HBox spacing="10">
-           <Button onAction="#handleBaseChange" styleClass="base-button" text="DEC" />
+           <Button fx:id="decButton" onAction="#handleBaseChange" styleClass="base-button" text="DEC" />
             <TextField fx:id="decField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" />
             </VBox.margin>
         </HBox>
         <HBox spacing="10">
-           <Button onAction="#handleBaseChange" styleClass="base-button" text="OCT" />
+           <Button fx:id="octButton" onAction="#handleBaseChange" styleClass="base-button" text="OCT" />
             <TextField fx:id="octField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" />
             </VBox.margin>
         </HBox>
         <HBox spacing="10">
-           <Button onAction="#handleBaseChange" prefHeight="49.0" prefWidth="57.0" styleClass="base-button" text="BIN" />
+           <Button fx:id="binButton" onAction="#handleBaseChange" prefHeight="49.0" prefWidth="57.0" styleClass="base-button" text="BIN" />
             <TextField fx:id="binField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" />

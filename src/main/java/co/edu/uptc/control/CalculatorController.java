@@ -7,11 +7,8 @@ import com.google.gson.reflect.TypeToken;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -44,6 +41,16 @@ public class CalculatorController {
     @FXML
     private ImageView deleteImageView;
 
+    @FXML
+    private Button decButton;
+    @FXML
+    private Button hexButton;
+    @FXML
+    private Button binButton;
+    @FXML
+    private Button octButton;
+
+
     private String currentBase = "DEC"; // Default base is decimal
 
 
@@ -62,18 +69,18 @@ public class CalculatorController {
         });
 
         expressionField.setOnKeyPressed(event->{
-//            if(event.getCode()== KeyCode.ENTER){
-//                handleEquals(null);
-//            }
+
             switch (event.getCode()){
-                case ENTER -> handleEquals(null);
-                case ESCAPE -> handleClear(null);
+                case ENTER -> handleEquals();
+                case ESCAPE -> handleClear();
             }
         });
         ColorAdjust colorAdjust = new ColorAdjust();
         colorAdjust.setBrightness(1.0); // Aumenta el brillo al máximo
         historyImageView.setEffect(colorAdjust);
         deleteImageView.setEffect(colorAdjust);
+
+        updateBaseStyles();
     }
 
 
@@ -99,7 +106,7 @@ private void handleOperator(ActionEvent event) {
 }
 
     @FXML
-    private void handleEquals(ActionEvent event) {
+    private void handleEquals() {
         String expression = expressionField.getText();
         try {
             String result;
@@ -138,11 +145,41 @@ private void handleOperator(ActionEvent event) {
     @FXML
     private void handleBaseChange(ActionEvent event) {
         currentBase = ((Button) event.getSource()).getText();
+        updateBaseStyles();
         updateExpressionBase();
     }
 
+    private void updateBaseStyles() {
+        switch (currentBase) {
+            case "HEX" -> {
+                hexButton.setStyle("-fx-background-color: #555555");
+                decButton.setStyle("");
+                octButton.setStyle("");
+                binButton.setStyle("");
+            }
+            case "OCT" -> {
+                octButton.setStyle("-fx-background-color: #555555");
+                hexButton.setStyle("");
+                decButton.setStyle("");
+                binButton.setStyle("");
+            }
+            case "BIN" -> {
+                binButton.setStyle("-fx-background-color: #555555");
+                hexButton.setStyle("");
+                decButton.setStyle("");
+                octButton.setStyle("");
+            }
+            default -> {
+                decButton.setStyle("-fx-background-color: #555555");
+                hexButton.setStyle("");
+                octButton.setStyle("");
+                binButton.setStyle("");
+            }
+        }
+    }
+
     @FXML
-    private void handleSqrt(ActionEvent event) {
+    private void handleSqrt() {
         String expression = expressionField.getText();
         try {
             double value = Double.parseDouble(expression);
@@ -161,7 +198,7 @@ private void handleOperator(ActionEvent event) {
     }
 
     @FXML
-    private void handleClear(ActionEvent event) {
+    private void handleClear() {
         expressionField.clear();
         hexField.clear();
         decField.clear();
@@ -185,7 +222,7 @@ private void handleOperator(ActionEvent event) {
     }
 
     @FXML
-    private void handleDeleteButton(ActionEvent event) {
+    private void handleDeleteButton() {
         String currentText = expressionField.getText();
         if (!currentText.isEmpty()) {
             expressionField.setText(currentText.substring(0, currentText.length() - 1));
@@ -240,14 +277,14 @@ private void handleOperator(ActionEvent event) {
     private int getBase(String base) {
         return switch (base) {
             case "HEX" -> 16;
-            case "DEC" -> 10;
             case "OCT" -> 8;
             case "BIN" -> 2;
             default -> 10;
         };
     }
 
-    private String evaluateBinaryExpression(String expression) throws Exception {
+
+    private String evaluateBinaryExpression(String expression) {
         StringBuilder decimalExpression = new StringBuilder();
         StringBuilder number = new StringBuilder();
 
@@ -272,7 +309,7 @@ private void handleOperator(ActionEvent event) {
         return Integer.toBinaryString((int) result);
     }
 
-    private String evaluateHexadecimalExpression(String expression) throws Exception {
+    private String evaluateHexadecimalExpression(String expression) {
         StringBuilder decimalExpression = new StringBuilder();
         StringBuilder number = new StringBuilder();
 
@@ -297,7 +334,7 @@ private void handleOperator(ActionEvent event) {
         return Integer.toHexString((int) result).toUpperCase();
     }
 
-    private String evaluateOctalExpression(String expression) throws Exception {
+    private String evaluateOctalExpression(String expression) {
         StringBuilder decimalExpression = new StringBuilder();
         StringBuilder number = new StringBuilder();
 

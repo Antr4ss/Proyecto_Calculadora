@@ -63,5 +63,80 @@
     "expression": "FE-EF",
     "result": "F",
     "base": "HEX"
+  },
+  {
+    "expression": "25*5",
+    "result": "125.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "5EF/5",
+    "result": "12F",
+    "base": "HEX"
+  },
+  {
+    "expression": "25*2",
+    "result": "4A",
+    "base": "HEX"
+  },
+  {
+    "expression": "1011+010101",
+    "result": "100000",
+    "base": "BIN"
+  },
+  {
+    "expression": "23*(2)",
+    "result": "46.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "25*(-2)",
+    "result": "-50.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "25+2",
+    "result": "27.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "25*2",
+    "result": "50.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "25/2",
+    "result": "12.5",
+    "base": "DEC"
+  },
+  {
+    "expression": "25/2",
+    "result": "12",
+    "base": "HEX"
+  },
+  {
+    "expression": "25+2",
+    "result": "27",
+    "base": "OCT"
+  },
+  {
+    "expression": "7/2",
+    "result": "3",
+    "base": "OCT"
+  },
+  {
+    "expression": "0101+1011",
+    "result": "10000",
+    "base": "BIN"
+  },
+  {
+    "expression": "1011/0111",
+    "result": "1",
+    "base": "BIN"
+  },
+  {
+    "expression": "588+8-5",
+    "result": "591.0",
+    "base": "DEC"
   }
 ]
