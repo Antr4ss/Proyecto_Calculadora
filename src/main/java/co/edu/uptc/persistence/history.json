@@ -138,5 +138,20 @@
     "expression": "588+8-5",
     "result": "591.0",
     "base": "DEC"
+  },
+  {
+    "expression": "101*1",
+    "result": "101",
+    "base": "BIN"
+  },
+  {
+    "expression": "1",
+    "result": "1.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "23",
+    "result": "23.0",
+    "base": "DEC"
   }
 ]

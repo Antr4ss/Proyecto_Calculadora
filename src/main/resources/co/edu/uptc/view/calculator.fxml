@@ -31,33 +31,33 @@
     </HBox>
 
     <VBox>
-            <padding>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-            </padding>
-       <TextField fx:id="expressionField" alignment="CENTER_RIGHT" prefHeight="218.0" prefWidth="340.0" styleClass="expression-field" />
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+        <TextField fx:id="expressionField" alignment="CENTER_RIGHT" prefHeight="218.0" prefWidth="340.0" styleClass="expression-field" />
         <HBox spacing="10" VBox.vgrow="NEVER">
-           <Button fx:id="hexButton" onAction="#handleBaseChange" styleClass="base-button" text="HEX" />
+            <Button fx:id="hexButton" onAction="#handleBaseChange" styleClass="base-button" text="HEX" />
             <TextField fx:id="hexField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" top="10.0" />
             </VBox.margin>
         </HBox>
         <HBox spacing="10">
-           <Button fx:id="decButton" onAction="#handleBaseChange" styleClass="base-button" text="DEC" />
+            <Button fx:id="decButton" onAction="#handleBaseChange" styleClass="base-button" text="DEC" />
             <TextField fx:id="decField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" />
             </VBox.margin>
         </HBox>
         <HBox spacing="10">
-           <Button fx:id="octButton" onAction="#handleBaseChange" styleClass="base-button" text="OCT" />
+            <Button fx:id="octButton" onAction="#handleBaseChange" styleClass="base-button" text="OCT" />
             <TextField fx:id="octField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" />
             </VBox.margin>
         </HBox>
         <HBox spacing="10">
-           <Button fx:id="binButton" onAction="#handleBaseChange" prefHeight="49.0" prefWidth="57.0" styleClass="base-button" text="BIN" />
+            <Button fx:id="binButton" onAction="#handleBaseChange" prefHeight="49.0" prefWidth="57.0" styleClass="base-button" text="BIN" />
             <TextField fx:id="binField" editable="false" prefHeight="25.0" prefWidth="191.0" styleClass="text-field" />
             <VBox.margin>
                 <Insets bottom="10.0" />
@@ -69,57 +69,56 @@
         <padding>
             <Insets bottom="10" left="10" right="10" top="10" />
         </padding>
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="A" GridPane.rowIndex="2" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="B" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="C" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button fx:id="buttonA" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="A" GridPane.rowIndex="2" />
+        <Button fx:id="buttonB" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="B" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button fx:id="buttonC" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="C" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button fx:id="buttonD" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="D" GridPane.rowIndex="3" />
+        <Button fx:id="buttonE" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="E" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button fx:id="buttonF" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="F" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Button fx:id="button7" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="7" GridPane.rowIndex="4" />
+        <Button fx:id="button8" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="8" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Button fx:id="button9" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="9" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <Button fx:id="button4" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="4" GridPane.rowIndex="5" />
+        <Button fx:id="button5" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Button fx:id="button6" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="6" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <Button fx:id="button1" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="1" GridPane.rowIndex="6" />
+        <Button fx:id="button2" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="2" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Button fx:id="button3" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="3" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+        <Button fx:id="button0" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
         <Button onAction="#handleOperator" prefHeight="72.0" prefWidth="53.0" styleClass="operator-button" text="/" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="D" GridPane.rowIndex="3" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="E" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="F" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-        <Button onAction="#handleOperator" prefHeight="69.0" prefWidth="53.0" styleClass="operator-button" text="*" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="7" GridPane.rowIndex="4" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="8" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="9" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <Button fx:id="buttonX" onAction="#handleOperator" prefHeight="69.0" prefWidth="53.0" styleClass="operator-button" text="*" GridPane.columnIndex="3" GridPane.rowIndex="2" />
         <Button onAction="#handleOperator" prefHeight="69.0" prefWidth="53.0" styleClass="operator-button" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="4" GridPane.rowIndex="5" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="6" GridPane.columnIndex="2" GridPane.rowIndex="5" />
         <Button onAction="#handleOperator" prefHeight="69.0" prefWidth="53.0" styleClass="operator-button" text="+" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="1" GridPane.rowIndex="6" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="2" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="3" GridPane.columnIndex="2" GridPane.rowIndex="6" />
         <Button onAction="#handleEquals" prefHeight="69.0" prefWidth="53.0" styleClass="equals-button" text="=" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-        <Button onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="." GridPane.rowIndex="7" />
-        <Button onAction="#handleSqrt" prefHeight="84.0" prefWidth="86.0" styleClass="clear-button" text="√" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <Button onAction="#handleOperator" prefHeight="69.0" prefWidth="53.0" styleClass="operator-button" text="^" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+        <Button fx:id="buttonDot" onAction="#handleNumber" prefHeight="84.0" prefWidth="86.0" styleClass="button" text="." GridPane.rowIndex="7" />
+        <Button fx:id="buttonRaiz" onAction="#handleSqrt" prefHeight="84.0" prefWidth="86.0" styleClass="clear-button" text="√" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button fx:id="buttonPow" onAction="#handleOperator" prefHeight="69.0" prefWidth="53.0" styleClass="operator-button" text="^" GridPane.columnIndex="3" GridPane.rowIndex="5" />
         <Button onAction="#handleParenthesis" prefHeight="84.0" prefWidth="86.0" styleClass="clear-button" text="(" GridPane.rowIndex="1" />
         <Button onAction="#handleParenthesis" prefHeight="84.0" prefWidth="86.0" styleClass="clear-button" text=")" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
         <Button onAction="#handleDeleteButton" prefHeight="69.0" prefWidth="53.0" styleClass="clear-button" GridPane.columnIndex="3" GridPane.rowIndex="1">
-        <graphic>
-            <ImageView fx:id="deleteImageView" fitHeight="18.0" fitWidth="19.0">
-                <Image url="@../view/images/delete.png" />
-            </ImageView>
-        </graphic>
+            <graphic>
+                <ImageView fx:id="deleteImageView" fitHeight="18.0" fitWidth="19.0">
+                    <Image url="@../view/images/delete.png" />
+                </ImageView>
+            </graphic>
         </Button>
         <Button onAction="#handleClear" prefHeight="84.0" prefWidth="86.0" styleClass="clear-button" text="C" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-      <columnConstraints>
-         <ColumnConstraints />
-         <ColumnConstraints />
-         <ColumnConstraints />
-         <ColumnConstraints />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-      </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
     </GridPane>
     <stylesheets>
         <URL value="@styles.css" />

@@ -50,6 +50,48 @@ public class CalculatorController {
     @FXML
     private Button octButton;
 
+    @FXML
+    private Button button0;
+    @FXML
+    private Button button1;
+    @FXML
+    private Button button2;
+    @FXML
+    private Button button3;
+    @FXML
+    private Button button4;
+    @FXML
+    private Button button5;
+    @FXML
+    private Button button6;
+    @FXML
+    private Button button7;
+    @FXML
+    private Button button8;
+    @FXML
+    private Button button9;
+    @FXML
+    private Button buttonA;
+    @FXML
+    private Button buttonB;
+    @FXML
+    private Button buttonC;
+    @FXML
+    private Button buttonD;
+    @FXML
+    private Button buttonE;
+    @FXML
+    private Button buttonF;
+    @FXML
+    private Button buttonX;
+    @FXML
+    private Button buttonRaiz;
+    @FXML
+    private Button buttonPow;
+    @FXML
+    private Button buttonDot;
+
+
 
     private String currentBase = "DEC"; // Default base is decimal
 
@@ -150,32 +192,132 @@ private void handleOperator(ActionEvent event) {
     }
 
     private void updateBaseStyles() {
+        resetNumberButtonStyles();
         switch (currentBase) {
             case "HEX" -> {
                 hexButton.setStyle("-fx-background-color: #555555");
                 decButton.setStyle("");
                 octButton.setStyle("");
                 binButton.setStyle("");
+                enableHex();
             }
             case "OCT" -> {
                 octButton.setStyle("-fx-background-color: #555555");
                 hexButton.setStyle("");
                 decButton.setStyle("");
                 binButton.setStyle("");
+                enableOctalNumberButtons();
             }
             case "BIN" -> {
                 binButton.setStyle("-fx-background-color: #555555");
                 hexButton.setStyle("");
                 decButton.setStyle("");
                 octButton.setStyle("");
+                highlightBinaryButtons();
             }
             default -> {
                 decButton.setStyle("-fx-background-color: #555555");
                 hexButton.setStyle("");
                 octButton.setStyle("");
                 binButton.setStyle("");
+                enableAllNumberButtons();
             }
         }
+    }
+    private void resetNumberButtonStyles() {
+        button0.setStyle("");
+        button1.setStyle("");
+        button2.setStyle("");
+        button3.setStyle("");
+        button4.setStyle("");
+        button5.setStyle("");
+        button6.setStyle("");
+        button7.setStyle("");
+        button8.setStyle("");
+        button9.setStyle("");
+        buttonA.setStyle("");
+        buttonB.setStyle("");
+        buttonC.setStyle("");
+        buttonD.setStyle("");
+        buttonE.setStyle("");
+        buttonF.setStyle("");
+        buttonPow.setStyle("");
+        buttonDot.setStyle("");
+        buttonRaiz.setStyle("");
+        buttonX.setStyle("");
+    }
+    private void enableAllNumberButtons() {
+        button0.setDisable(false);
+        button1.setDisable(false);
+        button2.setDisable(false);
+        button3.setDisable(false);
+        button4.setDisable(false);
+        button5.setDisable(false);
+        button6.setDisable(false);
+        button7.setDisable(false);
+        button8.setDisable(false);
+        button9.setDisable(false);
+        buttonA.setDisable(true);
+        buttonB.setDisable(true);
+        buttonC.setDisable(true);
+        buttonD.setDisable(true);
+        buttonE.setDisable(true);
+        buttonF.setDisable(true);
+        buttonPow.setDisable(false);
+        buttonDot.setDisable(false);
+        buttonRaiz.setDisable(false);
+        buttonX.setDisable(false);
+    }
+    private void enableOctalNumberButtons() {
+        enableAllNumberButtons();
+        button8.setDisable(true);
+        button9.setDisable(true);
+        buttonA.setDisable(true);
+        buttonB.setDisable(true);
+        buttonC.setDisable(true);
+        buttonD.setDisable(true);
+        buttonE.setDisable(true);
+        buttonF.setDisable(true);
+        buttonPow.setDisable(true);
+        buttonDot.setDisable(true);
+        buttonRaiz.setDisable(true);
+        buttonX.setDisable(true);
+    }
+    private void highlightBinaryButtons() {
+        button0.setDisable(false);
+        button1.setDisable(false);
+        button2.setDisable(true);
+        button3.setDisable(true);
+        button4.setDisable(true);
+        button5.setDisable(true);
+        button6.setDisable(true);
+        button7.setDisable(true);
+        button8.setDisable(true);
+        button9.setDisable(true);
+        buttonA.setDisable(true);
+        buttonB.setDisable(true);
+        buttonC.setDisable(true);
+        buttonD.setDisable(true);
+        buttonE.setDisable(true);
+        buttonF.setDisable(true);
+        buttonPow.setDisable(true);
+        buttonDot.setDisable(true);
+        buttonRaiz.setDisable(true);
+        buttonX.setDisable(false);
+    }
+    private void enableHex(){
+        enableAllNumberButtons();
+        buttonA.setDisable(false);
+        buttonB.setDisable(false);
+        buttonC.setDisable(false);
+        buttonD.setDisable(false);
+        buttonE.setDisable(false);
+        buttonF.setDisable(false);
+        buttonPow.setDisable(true);
+        buttonDot.setDisable(true);
+        buttonRaiz.setDisable(true);
+
+
     }
 
     @FXML
