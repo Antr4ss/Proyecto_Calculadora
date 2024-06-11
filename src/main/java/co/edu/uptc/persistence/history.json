@@ -13,5 +13,25 @@
     "expression": "2*(2)",
     "result": "4.0",
     "base": "DEC"
+  },
+  {
+    "expression": "2*(-2)",
+    "result": "-4.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "2*(-5)",
+    "result": "-10.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "2+(-2)",
+    "result": "0.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "2+(-4)",
+    "result": "-2.0",
+    "base": "DEC"
   }
 ]
