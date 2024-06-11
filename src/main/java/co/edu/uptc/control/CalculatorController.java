@@ -85,18 +85,18 @@ public class CalculatorController {
         }
     }
 
-    @FXML
-    private void handleOperator(ActionEvent event) {
-        String operator = ((Button) event.getSource()).getText();
-        if (operator.equals("-") && expressionField.getText().isEmpty()) {
+@FXML
+private void handleOperator(ActionEvent event) {
+    String operator = ((Button) event.getSource()).getText();
+    if (!expressionField.getText().isEmpty()) {
+        char lastChar = expressionField.getText().charAt(expressionField.getText().length() - 1);
+        if (Character.isDigit(lastChar) || lastChar == ')' || (currentBase.equals("HEX") && ((lastChar >= 'A' && lastChar <= 'F') || (lastChar >= 'a' && lastChar <= 'f'))) || lastChar == '(') {
             expressionField.appendText(operator);
-        } else if (!expressionField.getText().isEmpty()) {
-            char lastChar = expressionField.getText().charAt(expressionField.getText().length() - 1);
-            if (Character.isDigit(lastChar) || lastChar == ')' || (currentBase.equals("HEX") && ((lastChar >= 'A' && lastChar <= 'F') || (lastChar >= 'a' && lastChar <= 'f')))) {
-                expressionField.appendText(operator);
-            }
         }
+    } else if (operator.equals("-")) {
+        expressionField.appendText(operator);
     }
+}
 
     @FXML
     private void handleEquals(ActionEvent event) {
