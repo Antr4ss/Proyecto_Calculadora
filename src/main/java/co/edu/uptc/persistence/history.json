@@ -33,5 +33,35 @@
     "expression": "2+(-4)",
     "result": "-2.0",
     "base": "DEC"
+  },
+  {
+    "expression": "2*(4-2)",
+    "result": "4.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "2*(2-4)",
+    "result": "-4.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "2*(-4+2)",
+    "result": "-4.0",
+    "base": "DEC"
+  },
+  {
+    "expression": "1011^10",
+    "result": "1111001",
+    "base": "BIN"
+  },
+  {
+    "expression": "FE-EF",
+    "result": "F",
+    "base": "HEX"
+  },
+  {
+    "expression": "FE-EF",
+    "result": "F",
+    "base": "HEX"
   }
 ]
