@@ -511,33 +511,6 @@ private void handleOperator(ActionEvent event) {
     }
 
 
-    public void saveHistory() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try {
-            // Read existing history
-            List<Operation> existingHistory;
-            try (FileReader reader = new FileReader("src/main/java/co/edu/uptc/persistence/history.json")) {
-                Type listType = new TypeToken<ArrayList<Operation>>() {
-                }.getType();
-                existingHistory = gson.fromJson(reader, listType);
-                if (existingHistory == null) {
-                    existingHistory = new ArrayList<>();
-                }
-            }
-
-            // Add new operations to existing history
-            existingHistory.addAll(history);
-
-            // Write history back to file
-            try (PrintWriter pw = new PrintWriter("src/main/java/co/edu/uptc/persistence/history.json")) {
-                String json = gson.toJson(existingHistory);
-                pw.println(json);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     @FXML
     private void showHistory() {
